@@ -9,7 +9,7 @@
 
     <artifactId>python</artifactId>
     <packaging>hpi</packaging>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <name>Python Plugin</name>
     <url>http://wiki.hudson-ci.org/display/HUDSON/Python+Plugin</url>
 </project>
