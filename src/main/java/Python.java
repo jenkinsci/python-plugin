@@ -1,5 +1,6 @@
 package hudson.plugins.python;
 
+import hudson.Extension;
 import hudson.FilePath;
 import hudson.model.Descriptor;
 import hudson.tasks.Builder;
@@ -32,14 +33,9 @@ public class Python extends CommandInterpreter {
         return ".py";
     }
 
-    public Descriptor<Builder> getDescriptor() {
-        return DESCRIPTOR;
-    }
-
-    public static final DescriptorImpl DESCRIPTOR = new DescriptorImpl();
-
+    @Extension
     public static final class DescriptorImpl extends Descriptor<Builder> {
-        private DescriptorImpl() {
+        public DescriptorImpl() {
             super(Python.class);
         }
 
