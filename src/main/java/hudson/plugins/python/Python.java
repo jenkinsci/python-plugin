@@ -6,6 +6,7 @@ import hudson.model.Descriptor;
 import hudson.tasks.Builder;
 import hudson.tasks.CommandInterpreter;
 import net.sf.json.JSONObject;
+import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.StaplerRequest;
 
 /**
@@ -16,40 +17,30 @@ import org.kohsuke.stapler.StaplerRequest;
  *
  */
 public class Python extends CommandInterpreter {
-
-    private Python(String command) {
+    @DataBoundConstructor
+    public Python(String command) {
         super(command);
     }
 
-    protected String[] buildCommandLine(FilePath script) {
+    @Override
+    public String[] buildCommandLine(FilePath script) {
         return new String[]{"python", script.getRemote()};
     }
 
+    @Override
     protected String getContents() {
         return command;
     }
 
+    @Override
     protected String getFileExtension() {
         return ".py";
     }
 
     @Extension
     public static final class DescriptorImpl extends Descriptor<Builder> {
-        public DescriptorImpl() {
-            super(Python.class);
-        }
-
-        public Builder newInstance(StaplerRequest req, JSONObject formData) {
-            return new Python(formData.getString("python"));
-        }
-
         public String getDisplayName() {
-            return "Execute Python script";
-        }
-
-        @Override
-        public String getHelpFile() {
-            return "/plugin/python/help.html";
+            return Messages.Python_DisplayName();
         }
     }
 }
