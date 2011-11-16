@@ -9,7 +9,7 @@
 
     <artifactId>python</artifactId>
     <packaging>hpi</packaging>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <name>Python Plugin</name>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Python+Plugin</url>
     <developers>
