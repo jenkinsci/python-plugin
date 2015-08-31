@@ -2,6 +2,7 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout"
          xmlns:t="/lib/hudson" xmlns:f="/lib/form">
     <f:entry title="${%Script}" field="command" description="${%blurb(rootURL)}">
-        <f:textarea />
+        <f:textarea class="codemirror fixed-width" codemirror-config="mode: 'text/x-python'"
+                    codemirror-mode="python" />
     </f:entry>
 </j:jelly>
