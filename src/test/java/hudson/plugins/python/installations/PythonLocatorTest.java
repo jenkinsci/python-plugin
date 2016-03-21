@@ -54,7 +54,7 @@ import hudson.util.ArgumentListBuilder;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ VirtualChannel.class, PythonLocator.class, Launcher.class, Launcher.ProcStarter.class,
-    EnvVars.class })
+        EnvVars.class })
 public class PythonLocatorTest extends EasyMockSupport
 {
 

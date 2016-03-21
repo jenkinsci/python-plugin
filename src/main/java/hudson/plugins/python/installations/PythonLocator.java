@@ -51,6 +51,7 @@ public class PythonLocator
 
     private static Logger logger = Logger.getLogger(PythonLocator.class.getName());
 
+
     @CheckForNull
     public PythonExecutable findPythonForVersion(int version)
             throws IOException, InterruptedException
@@ -93,6 +94,7 @@ public class PythonLocator
 
         return null;
     }
+
 
     @CheckForNull
     public PythonExecutable findPythonVersionForWindows(int wantedVersion) throws IOException, InterruptedException
@@ -219,5 +221,4 @@ public class PythonLocator
 
         return 0;
     }
-
 }

@@ -65,5 +65,4 @@ public abstract class ScriptSource implements Describable<ScriptSource>
     {
         return Jenkins.getInstance().getDescriptorList(ScriptSource.class);
     }
-
 }

@@ -56,7 +56,7 @@ public class PythonValidator extends FileValidator
             {
                 return FormValidation.error(
                         "The python found at " + f.getPath() + " has major version " + effectiveVersion
-                        + " but expected major version is " + version + ".");
+                                + " but expected major version is " + version + ".");
             }
             return FormValidation.ok();
         }
@@ -69,5 +69,4 @@ public class PythonValidator extends FileValidator
             return FormValidation.error("Unable to check python version.");
         }
     }
-
 }

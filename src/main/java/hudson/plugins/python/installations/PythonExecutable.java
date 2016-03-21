@@ -57,5 +57,4 @@ public class PythonExecutable
     {
         return arguments;
     }
-
 }

@@ -71,7 +71,5 @@ public class FileScriptSource extends ScriptSource
         {
             return "Python script file";
         }
-
     }
-
 }

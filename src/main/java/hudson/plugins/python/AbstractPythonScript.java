@@ -52,12 +52,6 @@ import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import hudson.util.VariableResolver;
 
-/**
- * Base class for python script
- * @author Markus Winter
- *
- * @param <T>
- */
 public abstract class AbstractPythonScript<T extends AbstractPythonInstallation> extends Builder implements Serializable
 {
     private static final long serialVersionUID = -3956021436132554560L;
@@ -178,7 +172,6 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
                 Util.displayIOException(e, listener);
                 e.printStackTrace(listener.fatalError("Unable to delete script file " + script));
             }
-
         }
     }
 
@@ -245,7 +238,9 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
         return list;
     }
 
+
     protected abstract int getRequiredPythonVersion();
+
 
     private List<String> parseArgumentsAndOptions(String line)
     {
@@ -260,6 +255,7 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
 
         public abstract T[] getInstallations();
 
+
         public AbstractPythonScriptDescriptor(Class<? extends Builder> clazz)
         {
             super(clazz);
@@ -267,40 +263,15 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
 
         private AtomicInteger instanceCounter = new AtomicInteger(0);
 
+
         public int nextInstanceID()
         {
             return instanceCounter.incrementAndGet();
         }
 
-        /**
-         * Extracts ScriptSource from given form data.
-         */
-        /*
-        protected ScriptSource getScriptSource(final StaplerRequest req, final JSONObject data) throws FormException
-        {
-            Object scriptSourceObject = data.get("scriptSource");
 
-            if (scriptSourceObject instanceof JSONArray)
-            {
-                JSONArray scriptSourceJSONArray = (JSONArray)scriptSourceObject;
-                JSONObject scriptSourceJSONObject = new JSONObject();
-                Object nestedObject = scriptSourceJSONArray.get(1);
-
-                if (nestedObject instanceof JSONObject)
-                {
-                    scriptSourceJSONObject.putAll((JSONObject)nestedObject);
-
-                    scriptSourceJSONObject.put("value", scriptSourceJSONArray.get(0));
-
-                    data.put("scriptSource", scriptSourceJSONObject);
-                }
-            }
-
-            return ScriptSource.all().newInstanceFromRadioList(data, "scriptSource");
-        }
-
-         */
         @Override
+        @SuppressWarnings("rawtypes")
         public boolean isApplicable(Class<? extends AbstractProject> jobType)
         {
             return true;
@@ -311,6 +282,5 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
         {
             return ScriptSource.all();
         }
-
     }
 }

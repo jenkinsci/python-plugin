@@ -25,6 +25,7 @@ package hudson.plugins.python;
 
 import java.io.IOException;
 
+import org.apache.commons.lang.StringUtils;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
 
@@ -74,13 +75,11 @@ public class StringSource extends ScriptSource
 
         public FormValidation doCheckScript(@QueryParameter String scriptContent)
         {
-            if (scriptContent == null || scriptContent.trim().isEmpty())
+            if (StringUtils.isBlank(scriptContent))
             {
                 return FormValidation.error("Script seems to be empty string!");
             }
             return FormValidation.ok();
         }
-
     }
-
 }

@@ -34,7 +34,7 @@ import hudson.tools.ToolInstallation;
 import hudson.tools.ToolProperty;
 
 public abstract class AbstractPythonInstallation extends ToolInstallation
-implements EnvironmentSpecific<AbstractPythonInstallation>, NodeSpecific<AbstractPythonInstallation>
+        implements EnvironmentSpecific<AbstractPythonInstallation>, NodeSpecific<AbstractPythonInstallation>
 {
 
     private static final long serialVersionUID = 1L;
@@ -65,5 +65,4 @@ implements EnvironmentSpecific<AbstractPythonInstallation>, NodeSpecific<Abstrac
 
 
     protected abstract int getRequiredPythonVersion();
-
 }

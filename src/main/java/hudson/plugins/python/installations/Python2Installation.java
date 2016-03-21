@@ -113,7 +113,5 @@ public class Python2Installation extends AbstractPythonInstallation
             save();
             return true;
         }
-
     }
-
 }

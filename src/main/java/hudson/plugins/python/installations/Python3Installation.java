@@ -47,7 +47,6 @@ public class Python3Installation extends AbstractPythonInstallation
     private static final long serialVersionUID = -5394519702437683194L;
 
     public static final transient String DEFAULT_PYTHON3 = "Default python 3";
-
     public static final transient int PYTHON_VERSION = 3;
 
 
@@ -113,6 +112,5 @@ public class Python3Installation extends AbstractPythonInstallation
             save();
             return true;
         }
-
     }
 }

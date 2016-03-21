@@ -36,6 +36,7 @@ public class Python3Script extends AbstractPythonScript<Python3Installation>
 
     private static final long serialVersionUID = -8017952220078123555L;
 
+
     @DataBoundConstructor
     public Python3Script(String pythonName, ScriptSource scriptSource, JSONObject python3Options, String scriptArgs,
             String options, boolean quiet)
@@ -97,5 +98,4 @@ public class Python3Script extends AbstractPythonScript<Python3Installation>
                     .getInstallations();
         }
     }
-
 }
