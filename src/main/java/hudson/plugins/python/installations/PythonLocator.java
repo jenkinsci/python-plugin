@@ -200,7 +200,7 @@ public class PythonLocator
         {
             command.addTokenized("-" + wantedVersion);
         }
-        command.add("-c").add("import sys; print(sys.version_info.major)");
+        command.add("-c").add("import sys; print(sys.version_info[0])");
         logger.fine("Checking python Version of " + file.getRemote());
         logger.fine("Command: " + command.toString());
 
