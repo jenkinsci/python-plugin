@@ -219,19 +219,16 @@ public abstract class AbstractPythonScript<T extends AbstractPythonInstallation>
         list.addAll(parseArgumentsAndOptions(options));
         list.add(script.getRemote());
 
-        VariableResolver<String> vr = build.getBuildVariableResolver();
-
         if (StringUtils.isNotBlank(scriptArguments))
         {
+            VariableResolver<String> evr = new VariableResolver.ByMap<String>(env);
+            VariableResolver<String> pvr = build.getBuildVariableResolver();
             List<String> params = parseArgumentsAndOptions(scriptArguments);
             for (String param : params)
             {
-                String p = Util.replaceMacro(param, vr);
-                if (!quiet)
-                {
-                    listener.getLogger().println("[Python] python script argument: " + p);
-                }
-                list.add(param);
+                String p = Util.replaceMacro(param, evr);
+                p = Util.replaceMacro(p, pvr);
+                list.add(p);
             }
         }
 
