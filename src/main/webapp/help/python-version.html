@@ -1,0 +1,14 @@
+<p>
+	Python installation which will execute the script. Specify the name of the Python installation as specified in the Global Jenkins configuration.<br/>
+	By using the default configuration, the plugin will try to find the corresponding Python version and use it. <br>
+	<p>
+	<b>Windows</b><br/>
+	First it is checked if the Python launcher is available in the path (<a href="https://www.python.org/dev/peps/pep-0397/">PEP-397</a>) and if it is possible to start the desired Python.
+	If the Python launcher is not available, the plugin will check if there is a <i>python.exe</i> in the path for the desired version. Finally it will search a <i>python.exe</i> in sub folders 
+	of the c:-drive who's name starts with "python" followed by the desired version, e.g. <i>c:\python27</i>.  
+	</p>
+	<p>
+	<b>Unix</b><br/>
+	The plugin will look for the corresponding <i>python2</i> or <i>python3</i> in the path, if not found it will check if <i>python</i> is available and provides the correct version. 
+	</p>
+</p>

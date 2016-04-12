@@ -1,0 +1,10 @@
+<FindBugsFilter>
+     <Match>
+       <Class name="~.+\.Messages" />
+     </Match>
+    <Match>
+        <Class name="com.sonymobile.jenkins.plugins.lenientshutdown.ShutdownSlaveAction" />
+        <Method name="getIconFileName" />
+        <Bug pattern="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" />
+    </Match>
+</FindBugsFilter>
