@@ -23,9 +23,15 @@
  */
 package hudson.plugins.python;
 
+import static hudson.init.InitMilestone.PLUGINS_STARTED;
+
+import java.io.File;
+
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import hudson.Extension;
+import hudson.init.Initializer;
+import hudson.model.Items;
 import hudson.plugins.python.installations.Python3Installation;
 import hudson.plugins.python.installations.Python3Installation.Python3InstallationDescriptor;
 import jenkins.model.Jenkins;
@@ -36,6 +42,7 @@ public class Python3Script extends AbstractPythonScript<Python3Installation>
 
     private static final long serialVersionUID = -8017952220078123555L;
 
+    protected transient String command;
 
     @DataBoundConstructor
     public Python3Script(String pythonName, ScriptSource scriptSource, JSONObject python3Options, String scriptArgs,
@@ -65,6 +72,27 @@ public class Python3Script extends AbstractPythonScript<Python3Installation>
     protected int getRequiredPythonVersion()
     {
         return Python3Installation.PYTHON_VERSION;
+    }
+
+    public Object readResolve()
+    {
+        if (command != null)
+        {
+            scriptSource = new StringSource(command);
+            command = null;
+        }
+        return this;
+    }
+
+
+    @Initializer(before = PLUGINS_STARTED)
+    public static void addAliases()
+    {
+        File python3CompytibilityMarker = new File(Jenkins.getInstance().getRootDir(), "python3CompatibilityMarker");
+        if (python3CompytibilityMarker.exists())
+        {
+            Items.XSTREAM2.addCompatibilityAlias("hudson.plugins.python.Python", Python3Script.class);
+        }
     }
 
     @Extension

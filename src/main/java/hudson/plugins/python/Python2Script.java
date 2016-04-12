@@ -25,6 +25,8 @@ package hudson.plugins.python;
 
 import static hudson.init.InitMilestone.PLUGINS_STARTED;
 
+import java.io.File;
+
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import hudson.Extension;
@@ -88,7 +90,12 @@ public class Python2Script extends AbstractPythonScript<Python2Installation>
     @Initializer(before = PLUGINS_STARTED)
     public static void addAliases()
     {
-        Items.XSTREAM2.addCompatibilityAlias("hudson.plugins.python.Python", Python2Script.class);
+        File python3CompytibilityMarker = new File(Jenkins.getInstance().getRootDir(), "python3CompatibilityMarker");
+        if (!python3CompytibilityMarker.exists())
+        {
+            Items.XSTREAM2.addCompatibilityAlias("hudson.plugins.python.Python", Python2Script.class);
+        }
+
     }
 
     @Extension
