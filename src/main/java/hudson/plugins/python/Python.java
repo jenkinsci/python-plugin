@@ -2,12 +2,11 @@ package hudson.plugins.python;
 
 import hudson.Extension;
 import hudson.FilePath;
-import hudson.model.Descriptor;
+import hudson.model.AbstractProject;
+import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Builder;
 import hudson.tasks.CommandInterpreter;
-import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.StaplerRequest;
 
 /**
  * Invokes the Python interpreter and invokes the Python script entered on the
@@ -38,9 +37,15 @@ public class Python extends CommandInterpreter {
     }
 
     @Extension
-    public static final class DescriptorImpl extends Descriptor<Builder> {
+    public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
+        @Override
         public String getDisplayName() {
             return Messages.Python_DisplayName();
+        }
+
+        @Override
+        public boolean isApplicable(Class<? extends AbstractProject> type) {
+            return true;
         }
     }
 }
