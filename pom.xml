@@ -9,7 +9,7 @@
 
     <artifactId>python</artifactId>
     <packaging>hpi</packaging>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.4</version>
     <name>Python Plugin</name>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Python+Plugin</url>
     <developers>
@@ -25,7 +25,7 @@
     <connection>scm:git:git://github.com/jenkinsci/python-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/python-plugin.git</developerConnection>
     <url>http://github.com/jenkinsci/scp-plugin</url>
-    <tag>HEAD</tag>
+    <tag>python-1.4</tag>
   </scm>
 
   <repositories>
