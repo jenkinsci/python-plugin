@@ -19,6 +19,12 @@
             <email>tyler@slide.com</email>
             <timezone>-8</timezone>
         </developer>
+        <developer>
+            <id>mazimkhan</id>
+            <name>Mohammad Azim Khan</name>
+            <email>mohammadazim@gmail.com</email>
+            <timezone>+0</timezone>
+        </developer>
     </developers>
 
   <scm>
