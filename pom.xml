@@ -30,7 +30,7 @@
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/python-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/python-plugin.git</developerConnection>
-    <url>http://github.com/jenkinsci/scp-plugin</url>
+    <url>http://github.com/jenkinsci/python-plugin</url>
     <tag>python-1.4</tag>
   </scm>
 
