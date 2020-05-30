@@ -11,7 +11,8 @@
     <packaging>hpi</packaging>
     <version>1.4</version>
     <name>Python Plugin</name>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/Python+Plugin</url>
+    <url>https://github.com/jenkinsci/python-plugin</url>
+	
     <developers>
         <developer>
             <id>rtyler</id>

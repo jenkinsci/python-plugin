@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: python-$NEXT_MINOR_VERSION
