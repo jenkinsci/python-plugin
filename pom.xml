@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>1.565.1</version>
+        <version>1.580.1</version>
       <relativePath />
     </parent>
 
@@ -18,6 +18,12 @@
             <name>R. Tyler Ballance</name>
             <email>tyler@slide.com</email>
             <timezone>-8</timezone>
+        </developer>
+        <developer>
+            <id>mazimkhan</id>
+            <name>Mohammad Azim Khan</name>
+            <email>mohammadazim@gmail.com</email>
+            <timezone>+0</timezone>
         </developer>
     </developers>
 
@@ -41,5 +47,12 @@
             <url>http://repo.jenkins-ci.org/public/</url>
         </pluginRepository>
     </pluginRepositories>
+    <dependencies>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-step-api</artifactId>
+            <version>2.4</version>
+        </dependency>
+    </dependencies>
 </project>  
 
