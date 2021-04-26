@@ -38,6 +38,14 @@ public class Python extends CommandInterpreter {
 
     @Extension
     public static final class DescriptorImpl extends BuildStepDescriptor<Builder> {
+        public DescriptorImpl() {
+            load();
+        }
+
+        protected DescriptorImpl(Class<? extends Python> clazz) {
+            super(clazz);
+        }
+
         @Override
         public String getDisplayName() {
             return Messages.Python_DisplayName();
